@@ -1,1 +1,11 @@
 // give betting layer z-index of 30 (z-index only works when you give a position to the element like absolute, relative, fixed)
+
+.layer--betting {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #121f29;
+  z-index: 30;
+}
