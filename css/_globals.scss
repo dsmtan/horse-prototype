@@ -1,0 +1,25 @@
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: Arial, sans-serif;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}

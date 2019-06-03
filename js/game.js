@@ -1,23 +1,77 @@
 "use strict";
 
+const gameLayer = document.querySelector(".layer--game");
 const startBtn = document.querySelector(".button--start");
 const finish = document.querySelector(".finish");
+
 let XvalueFinish;
 //get all horses in an array
 let horseList = document.querySelectorAll(".horse");
+let horseNames = ["green", "orange", "black", "red"];
 let rankingList = [];
+
+const firstHorse = document.querySelector(".track--1 > .horse");
+const secondHorse = document.querySelector(".track--2 > .horse");
+const thirdHorse = document.querySelector(".track--3 > .horse");
+const userHorse = document.querySelector("#horse--user");
+
+//testing user selection of background and horse
+let userChoices = {
+  location: "location--4",
+  horse: "green"
+};
 
 window.onload = function() {
   XvalueFinish = finish.getBoundingClientRect().left;
 
+  //set chosen location as backgroundimg
+  setLocationBg();
+
+  //place all horses in tracks with user's horse at bottom
+  placeHorses();
+
   startBtn.addEventListener("click", startRace);
 };
+
+function setLocationBg() {
+  gameLayer.style.backgroundImage = `url(../images/${
+    userChoices.location
+  }.svg)`;
+}
+
+function placeHorses() {
+  //place chosen horse in bottom track
+  userHorse.style.backgroundImage = `url(../images/horse--${
+    userChoices.horse
+  }.png)`;
+
+  //give all other horses a track
+  horseNames.splice(horseNames.indexOf(userChoices.horse), 1);
+
+  firstHorse.style.backgroundImage = `url(../images/horse--${
+    horseNames[0]
+  }.png)`;
+  firstHorse.id = horseNames[0];
+
+  secondHorse.style.backgroundImage = `url(../images/horse--${
+    horseNames[1]
+  }.png)`;
+  secondHorse.id = horseNames[1];
+
+  thirdHorse.style.backgroundImage = `url(../images/horse--${
+    horseNames[2]
+  }.png)`;
+  thirdHorse.id = horseNames[2];
+}
 
 function startRace() {
   startBtn.classList.add("hide");
 
   horseList.forEach(singleHorse => {
-    if (singleHorse.id == "horse--6") {
+    //add galloping animation
+    singleHorse.classList.add("galloping");
+
+    if (singleHorse.id == "horse--user") {
       singleHorse.addEventListener("click", function() {
         moveUserHorse(singleHorse);
       });
@@ -40,14 +94,16 @@ function horseMoveRandom(singleHorse) {
 }
 
 function registerFinish(singleHorse) {
-  let horseNose = singleHorse.getBoundingClientRect().right - 20;
+  let horseNose = singleHorse.getBoundingClientRect().right - 15;
 
   if (horseNose > XvalueFinish) {
     // finished horse pushed to array
     rankingList.push(singleHorse.id);
-    console.log(rankingList);
+    console.log(singleHorse);
+    //remove galloping animation
+    singleHorse.classList.remove("galloping");
     gameFinished();
-  } else if (singleHorse.id !== "horse--6") {
+  } else if (singleHorse.id !== "horse--user") {
     // each horse loops until finish is reached
     setTimeout(horseMoveRandom, Math.random() * 900, singleHorse);
   }
@@ -68,21 +124,26 @@ function gameFinished() {
   let winnerElement = document.querySelector(`#${winner}`);
   winnerElement.parentNode.style.backgroundColor = "gold";
 
-  if (rankingList.length === 6) {
+  if (rankingList.length === 4) {
     //show results when all horses finish
     showResults();
   }
 }
 
-const rankingDiv = document.querySelector(".overlay--ranking");
+const rankingDiv = document.querySelector(".layer--ranking");
 
 function showResults() {
   rankingDiv.classList.add("shown");
 
-  rankingList.forEach(ranking => {
-    let place = rankingList.indexOf(ranking) + 1;
+  rankingList.forEach(rankedHorse => {
+    let place = rankingList.indexOf(rankedHorse) + 1;
     let rank = document.createElement("p");
-    rank.textContent = `# ${place} : ${ranking}`;
+
+    if (rankedHorse === "horse--user") {
+      rank.textContent = `# ${place} : YOU!!!`;
+    } else {
+      rank.textContent = `# ${place} : ${rankedHorse}`;
+    }
 
     rankingDiv.appendChild(rank);
   });

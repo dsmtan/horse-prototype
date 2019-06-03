@@ -1,0 +1,77 @@
+// give game layer z-index of 20 (z-index only works when you give a position to the element like absolute, relative, fixed)
+
+.button--start {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  height: 3em;
+  width: 6em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 4px double black;
+  margin: 0;
+  padding: 0;
+  z-index: 21;
+  cursor: pointer;
+
+  &:hover {
+    background-color: gold;
+  }
+}
+
+.layer--game {
+  position: relative;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 0;
+  padding-top: 22vh;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.track {
+  align-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.horse {
+  object-fit: contain;
+  max-height: 90%;
+  z-index: 21;
+  height: 63px;
+  width: 80.25px;
+  background-image: url("../images/horse--4.png");
+
+  &.galloping {
+    animation: gallop 0.5s steps(4) infinite;
+  }
+}
+
+#horse--user {
+  cursor: pointer;
+}
+
+@keyframes gallop {
+  100% {
+    background-position: -321px 0px;
+  }
+}
+
+.finish {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  height: 100vh;
+  width: 15px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.541);
+  z-index: 20;
+}

@@ -8,32 +8,39 @@
     <title>Horse Racing Game</title>
   </head>
   <body>
-    <button class="button--start">START</button>
+    <!-- INTRO LAYER -->
+    <div class="layer--intro"></div>
 
-    <main class="main--container">
+    <!-- LOCATIONS LAYER -->
+    <div class="layer--locations"></div>
+
+    <!-- BETTING LAYER -->
+    <div class="layer--betting"></div>
+
+    <!-- GAME LAYER -->
+
+    <div class="layer--game">
+      <!-- button is only a placeholder til previous layer is done -->
+      <button class="button--start">START</button>
+
       <div class="track track--1">
-        <img class="horse" id="horse--1" src="images/racehorse.png" alt="" />
+        <div class="horse"></div>
       </div>
       <div class="track track--2">
-        <img class="horse" id="horse--2" src="images/racehorse.png" alt="" />
+        <div class="horse"></div>
       </div>
       <div class="track track--3">
-        <img class="horse" id="horse--3" src="images/racehorse.png" alt="" />
+        <div class="horse"></div>
       </div>
       <div class="track track--4">
-        <img class="horse" id="horse--4" src="images/racehorse.png" alt="" />
-      </div>
-      <div class="track track--5">
-        <img class="horse" id="horse--5" src="images/racehorse.png" alt="" />
-      </div>
-      <div class="track track--6">
-        <img class="horse" id="horse--6" src="images/racehorse.png" alt="" />
+        <div class="horse" id="horse--user"></div>
       </div>
 
       <div class="finish"></div>
-    </main>
+    </div>
 
-    <div class="overlay--ranking">
+    <!-- RANKING LAYER -->
+    <div class="layer--ranking">
       <h2>RESULTS</h2>
     </div>
     <script src="js/game.js"></script>
