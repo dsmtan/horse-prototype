@@ -34,38 +34,39 @@ window.onload = function() {
 };
 
 function setLocationBg() {
-  gameLayer.style.backgroundImage = `url(../images/${
+  gameLayer.style.backgroundImage = `url("./images/${
     userChoices.location
-  }.svg)`;
+  }.svg")`;
 }
 
 function placeHorses() {
   //place chosen horse in bottom track
-  userHorse.style.backgroundImage = `url(../images/horse--${
+  userHorse.style.backgroundImage = `url("./images/horse--${
     userChoices.horse
-  }.png)`;
+  }.png")`;
 
   //give all other horses a track
   horseNames.splice(horseNames.indexOf(userChoices.horse), 1);
 
-  firstHorse.style.backgroundImage = `url(../images/horse--${
+  firstHorse.style.backgroundImage = `url("./images/horse--${
     horseNames[0]
-  }.png)`;
+  }.png")`;
   firstHorse.id = horseNames[0];
 
-  secondHorse.style.backgroundImage = `url(../images/horse--${
+  secondHorse.style.backgroundImage = `url("./images/horse--${
     horseNames[1]
-  }.png)`;
+  }.png")`;
   secondHorse.id = horseNames[1];
 
-  thirdHorse.style.backgroundImage = `url(../images/horse--${
+  thirdHorse.style.backgroundImage = `url("./images/horse--${
     horseNames[2]
-  }.png)`;
+  }.png")`;
   thirdHorse.id = horseNames[2];
 }
 
 function startRace() {
   startBtn.classList.add("hide");
+  openFullscreen();
 
   horseList.forEach(singleHorse => {
     //add galloping animation
@@ -79,6 +80,21 @@ function startRace() {
       horseMoveRandom(singleHorse);
     }
   });
+}
+
+function openFullscreen() {
+  if (document.body.requestFullscreen) {
+    document.body.requestFullscreen({ navigationUI: "hide" });
+  } else if (document.body.mozRequestFullScreen) {
+    /* Firefox */
+    document.body.mozRequestFullScreen({ navigationUI: "hide" });
+  } else if (document.body.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    document.body.webkitRequestFullscreen({ navigationUI: "hide" });
+  } else if (document.body.msRequestFullscreen) {
+    /* IE/Edge */
+    document.body.msRequestFullscreen({ navigationUI: "hide" });
+  }
 }
 
 // loop for 5 other horses to move at random speed
@@ -120,6 +136,7 @@ function moveUserHorse(userHorse) {
 }
 
 function gameFinished() {
+  //show who won
   let winner = rankingList[0];
   let winnerElement = document.querySelector(`#${winner}`);
   winnerElement.parentNode.style.backgroundColor = "gold";
