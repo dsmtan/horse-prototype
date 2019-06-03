@@ -36,19 +36,18 @@
   z-index: 20;
 }
 
-.track {
+.div--track {
   align-content: center;
   display: flex;
   align-items: center;
 }
 
-.horse {
+.div--horse {
   object-fit: contain;
   max-height: 90%;
   z-index: 21;
   height: 63px;
   width: 80.25px;
-  background-image: url("../images/horse--4.png");
 
   &.galloping {
     animation: gallop 0.5s steps(4) infinite;
@@ -65,7 +64,7 @@
   }
 }
 
-.finish {
+.div--finish {
   position: absolute;
   bottom: 0%;
   right: 0%;

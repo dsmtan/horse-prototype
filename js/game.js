@@ -2,17 +2,17 @@
 
 const gameLayer = document.querySelector(".layer--game");
 const startBtn = document.querySelector(".button--start");
-const finish = document.querySelector(".finish");
+const finish = document.querySelector(".div--finish");
 
 let XvalueFinish;
 //get all horses in an array
-let horseList = document.querySelectorAll(".horse");
+let horseList = document.querySelectorAll(".div--horse");
 let horseNames = ["green", "orange", "black", "red"];
 let rankingList = [];
 
-const firstHorse = document.querySelector(".track--1 > .horse");
-const secondHorse = document.querySelector(".track--2 > .horse");
-const thirdHorse = document.querySelector(".track--3 > .horse");
+const firstHorse = document.querySelector(".track--1 > .div--horse");
+const secondHorse = document.querySelector(".track--2 > .div--horse");
+const thirdHorse = document.querySelector(".track--3 > .div--horse");
 const userHorse = document.querySelector("#horse--user");
 
 //testing user selection of background and horse
@@ -99,7 +99,7 @@ function registerFinish(singleHorse) {
   if (horseNose > XvalueFinish) {
     // finished horse pushed to array
     rankingList.push(singleHorse.id);
-    console.log(singleHorse);
+
     //remove galloping animation
     singleHorse.classList.remove("galloping");
     gameFinished();

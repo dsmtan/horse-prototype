@@ -57,7 +57,7 @@ body {
   z-index: 20;
 }
 
-.track {
+.div--track {
   -ms-flex-line-pack: center;
       align-content: center;
   display: -webkit-box;
@@ -68,17 +68,16 @@ body {
           align-items: center;
 }
 
-.horse {
+.div--horse {
   -o-object-fit: contain;
      object-fit: contain;
   max-height: 90%;
   z-index: 21;
   height: 63px;
   width: 80.25px;
-  background-image: url("../images/horse--4.png");
 }
 
-.horse.galloping {
+.div--horse.galloping {
   -webkit-animation: gallop 0.5s steps(4) infinite;
           animation: gallop 0.5s steps(4) infinite;
 }
@@ -99,7 +98,7 @@ body {
   }
 }
 
-.finish {
+.div--finish {
   position: absolute;
   bottom: 0%;
   right: 0%;
