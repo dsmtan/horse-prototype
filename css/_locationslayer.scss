@@ -6,24 +6,35 @@
   left: 0%;
   width: 100vw;
   height: 100vh;
+  transition: width 1s 0.2s;
   background-color: #121f29;
   text-align: center;
   z-index: 40;
+  overflow: hidden;
 }
 
 .section--header {
   margin: 0 auto;
 
   .img--horsehead {
-    max-height: 3.8em;
+    max-height: 3.6em;
   }
 
   h2 {
     font-family: $headerfont;
     color: white;
-    font-size: 1.7em;
+    font-size: 1.6em;
     font-weight: 100;
     margin: 0;
+  }
+}
+
+.disappear {
+  width: 0;
+
+  & * {
+    transition: 0.8s 0.2s;
+    opacity: 0;
   }
 }
 
@@ -31,7 +42,7 @@
   position: absolute;
   bottom: 0%;
   width: 100vw;
-  height: calc(100vh - 7.2em);
+  height: calc(100vh - 6.8em);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -39,42 +50,51 @@
   z-index: 41;
 }
 
-.article-location {
+.article--location {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 3px solid $ochre;
+  }
 
   h4 {
     color: $navybg;
-    margin-bottom: 2px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 3px;
   }
 }
 
 #location {
   &--1 {
     background-image: url("../images/location--1.svg");
-    background-size: 150%;
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center top;
   }
 
   &--2 {
     background-image: url("../images/location--2.svg");
-    background-size: 150%;
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center top;
   }
 
   &--3 {
     background-image: url("../images/location--3.svg");
-    background-size: 150%;
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center top;
   }
 
   &--4 {
     background-image: url("../images/location--4.svg");
-    background-size: 150%;
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center top;
   }

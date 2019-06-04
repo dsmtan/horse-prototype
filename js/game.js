@@ -1,5 +1,39 @@
 "use strict";
 
+//testing user selection of background and horse
+let userChoices = {
+  location: "location--4",
+  horse: "green"
+};
+
+//LOCATION LAYER
+const locaLayer = document.querySelector(".layer--locations");
+
+window.onload = function() {
+  registerChoice();
+  prepareGame();
+};
+
+function registerChoice() {
+  document.addEventListener(
+    "click",
+    function(event) {
+      if (event.target.classList.contains("article--location")) {
+        userChoices.location = event.target.id;
+        console.log(userChoices);
+        locaLayer.classList.add("disappear");
+      } else if (event.target.classList.contains("locationname")) {
+        userChoices.location = event.target.parentNode.id;
+        console.log(userChoices);
+        locaLayer.classList.add("disappear");
+      }
+      //add else if for horse choice later
+    },
+    false
+  );
+}
+
+//GAME LAYER
 const gameLayer = document.querySelector(".layer--game");
 const startBtn = document.querySelector(".button--start");
 const finish = document.querySelector(".div--finish");
@@ -15,13 +49,7 @@ const secondHorse = document.querySelector(".track--2 > .div--horse");
 const thirdHorse = document.querySelector(".track--3 > .div--horse");
 const userHorse = document.querySelector("#horse--user");
 
-//testing user selection of background and horse
-let userChoices = {
-  location: "location--4",
-  horse: "green"
-};
-
-window.onload = function() {
+function prepareGame() {
   XvalueFinish = finish.getBoundingClientRect().left;
 
   //set chosen location as backgroundimg
@@ -31,7 +59,7 @@ window.onload = function() {
   placeHorses();
 
   startBtn.addEventListener("click", startRace);
-};
+}
 
 function setLocationBg() {
   gameLayer.style.backgroundImage = `url("./images/${
