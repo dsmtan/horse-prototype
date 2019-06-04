@@ -8,10 +8,11 @@
   height: 0;
   max-height: 100vh;
   margin: 0;
-  background-color: rgba(0, 0, 128, 0.87);
+  background-color: #121f29f1;
   color: white;
   text-align: center;
   transition: height 1s;
+  overflow: hidden;
   z-index: 25;
 
   h2 {
@@ -34,4 +35,20 @@
       opacity: 1;
     }
   }
+}
+
+.div--rankinggrid {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 3em 3em 3em 3em;
+}
+
+.rankno {
+  grid-column: 1;
+}
+
+.result {
+  grid-column: 2;
 }

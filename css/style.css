@@ -76,16 +76,6 @@ body {
   margin: 0;
 }
 
-.disappear {
-  width: 0;
-}
-
-.disappear * {
-  -webkit-transition: 0.6s 0.2s;
-  transition: 0.6s 0.2s;
-  opacity: 0;
-}
-
 .div--locationgrid {
   position: absolute;
   bottom: 0%;
@@ -346,11 +336,12 @@ body {
   height: 0;
   max-height: 100vh;
   margin: 0;
-  background-color: rgba(0, 0, 128, 0.87);
+  background-color: #121f29f1;
   color: white;
   text-align: center;
   -webkit-transition: height 1s;
   transition: height 1s;
+  overflow: hidden;
   z-index: 25;
 }
 
@@ -375,13 +366,24 @@ body {
   opacity: 1;
 }
 
-.disappear {
-  width: 0;
+.div--rankinggrid {
+  width: 50%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  -ms-grid-rows: 3em 3em 3em 3em;
+      grid-template-rows: 3em 3em 3em 3em;
 }
 
-.disappear * {
-  -webkit-transition: 0.6s 0.2s;
-  transition: 0.6s 0.2s;
-  opacity: 0;
+.rankno {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.result {
+  -ms-grid-column: 2;
+  grid-column: 2;
 }
 /*# sourceMappingURL=style.css.map */
