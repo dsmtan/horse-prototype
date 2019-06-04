@@ -6,7 +6,7 @@
   left: 0%;
   width: 100vw;
   height: 100vh;
-  transition: width 1s 0.2s;
+  transition: width 0.8s 0.2s;
   background-color: #121f29;
   text-align: center;
   z-index: 40;
@@ -26,15 +26,6 @@
     font-size: 1.6em;
     font-weight: 100;
     margin: 0;
-  }
-}
-
-.disappear {
-  width: 0;
-
-  & * {
-    transition: 0.8s 0.2s;
-    opacity: 0;
   }
 }
 
@@ -64,9 +55,10 @@
   h4 {
     color: $navybg;
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     width: 100%;
     padding: 3px;
+    font-size: 1em;
   }
 }
 

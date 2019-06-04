@@ -6,12 +6,12 @@ let userChoices = {
   horse: "green"
 };
 
-//LOCATION LAYER
+//LOCATION + BETTING LAYERS
 const locaLayer = document.querySelector(".layer--locations");
+const betLayer = document.querySelector(".layer--betting");
 
 window.onload = function() {
   registerChoice();
-  prepareGame();
 };
 
 function registerChoice() {
@@ -20,12 +20,20 @@ function registerChoice() {
     function(event) {
       if (event.target.classList.contains("article--location")) {
         userChoices.location = event.target.id;
-        console.log(userChoices);
         locaLayer.classList.add("disappear");
       } else if (event.target.classList.contains("locationname")) {
         userChoices.location = event.target.parentNode.id;
-        console.log(userChoices);
         locaLayer.classList.add("disappear");
+      } else if (event.target.classList.contains("article--horse")) {
+        userChoices.horse = event.target.id;
+        betLayer.classList.add("disappear");
+        prepareGame();
+        console.log(userChoices);
+      } else if (event.target.classList.contains("horsename")) {
+        userChoices.horse = event.target.parentNode.id;
+        betLayer.classList.add("disappear");
+        prepareGame();
+        console.log(userChoices);
       }
       //add else if for horse choice later
     },
@@ -41,7 +49,12 @@ const finish = document.querySelector(".div--finish");
 let XvalueFinish;
 //get all horses in an array
 let horseList = document.querySelectorAll(".div--horse");
-let horseNames = ["green", "orange", "black", "red"];
+let horseNames = [
+  "horse--green",
+  "horse--orange",
+  "horse--black",
+  "horse--red"
+];
 let rankingList = [];
 
 const firstHorse = document.querySelector(".track--1 > .div--horse");
@@ -69,27 +82,19 @@ function setLocationBg() {
 
 function placeHorses() {
   //place chosen horse in bottom track
-  userHorse.style.backgroundImage = `url("./images/horse--${
-    userChoices.horse
-  }.png")`;
+  userHorse.style.backgroundImage = `url("./images/${userChoices.horse}.png")`;
 
   //give all other horses a track
   horseNames.splice(horseNames.indexOf(userChoices.horse), 1);
 
-  firstHorse.style.backgroundImage = `url("./images/horse--${
-    horseNames[0]
-  }.png")`;
-  firstHorse.id = horseNames[0];
+  firstHorse.style.backgroundImage = `url("./images/${horseNames[0]}.png")`;
+  firstHorse.id = "run" + horseNames[0];
 
-  secondHorse.style.backgroundImage = `url("./images/horse--${
-    horseNames[1]
-  }.png")`;
-  secondHorse.id = horseNames[1];
+  secondHorse.style.backgroundImage = `url("./images/${horseNames[1]}.png")`;
+  secondHorse.id = "run" + horseNames[1];
 
-  thirdHorse.style.backgroundImage = `url("./images/horse--${
-    horseNames[2]
-  }.png")`;
-  thirdHorse.id = horseNames[2];
+  thirdHorse.style.backgroundImage = `url("./images/${horseNames[2]}.png")`;
+  thirdHorse.id = "run" + horseNames[2];
 }
 
 function startRace() {
@@ -111,18 +116,18 @@ function startRace() {
 }
 
 function openFullscreen() {
-  if (document.body.requestFullscreen) {
-    document.body.requestFullscreen({ navigationUI: "hide" });
-  } else if (document.body.mozRequestFullScreen) {
-    /* Firefox */
-    document.body.mozRequestFullScreen({ navigationUI: "hide" });
-  } else if (document.body.webkitRequestFullscreen) {
-    /* Chrome, Safari and Opera */
-    document.body.webkitRequestFullscreen({ navigationUI: "hide" });
-  } else if (document.body.msRequestFullscreen) {
-    /* IE/Edge */
-    document.body.msRequestFullscreen({ navigationUI: "hide" });
-  }
+  // if (document.body.requestFullscreen) {
+  //   document.body.requestFullscreen({ navigationUI: "hide" });
+  // } else if (document.body.mozRequestFullScreen) {
+  //   /* Firefox */
+  //   document.body.mozRequestFullScreen({ navigationUI: "hide" });
+  // } else if (document.body.webkitRequestFullscreen) {
+  //   /* Chrome, Safari and Opera */
+  //   document.body.webkitRequestFullscreen({ navigationUI: "hide" });
+  // } else if (document.body.msRequestFullscreen) {
+  //   /* IE/Edge */
+  //   document.body.msRequestFullscreen({ navigationUI: "hide" });
+  // }
 }
 
 // loop for 5 other horses to move at random speed
@@ -167,7 +172,7 @@ function gameFinished() {
   //show who won
   let winner = rankingList[0];
   let winnerElement = document.querySelector(`#${winner}`);
-  winnerElement.parentNode.style.backgroundColor = "gold";
+  winnerElement.parentNode.style.backgroundColor = "#d69b3a";
 
   if (rankingList.length === 4) {
     //show results when all horses finish
