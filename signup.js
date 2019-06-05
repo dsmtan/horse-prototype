@@ -94,6 +94,8 @@ function goback() {
   document.querySelector(".signup1").style.display = "block";
 }
 
+//validaton of password inspired by  https://www.w3schools.com/howto/howto_js_password_validation.asp
+
 const number = document.getElementById("number");
 const length = document.getElementById("length");
 const myInput = document.getElementById("psw");
