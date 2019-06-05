@@ -22,6 +22,7 @@ body {
 
 .section--header {
   margin: 0 auto;
+  background-color: #121f29;
 }
 
 .section--header .img--horsehead {
@@ -44,6 +45,345 @@ body {
   -webkit-transition: 0.8s 0.2s;
   transition: 0.8s 0.2s;
   opacity: 0;
+}
+
+.layer--intro {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: width 0.8s 0.2s;
+  transition: width 0.8s 0.2s;
+  background-color: #121f29;
+  text-align: center;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.h1--gamename {
+  position: absolute;
+  top: 40vh;
+  width: 100vw;
+  opacity: 0;
+  font-size: 2.5em;
+  font-family: "Slabo 27px", serif;
+  font-weight: 100;
+  color: white;
+  -webkit-animation: headline 5s alternate forwards ease-in-out;
+          animation: headline 5s alternate forwards ease-in-out;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  z-index: 51;
+}
+
+@-webkit-keyframes headline {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes headline {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#logo {
+  -webkit-animation: logo 2s alternate forwards;
+          animation: logo 2s alternate forwards;
+}
+
+@-webkit-keyframes logo {
+  0% {
+    -webkit-transform: rotate(0deg), scale(8);
+            transform: rotate(0deg), scale(8);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  5% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  6% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+}
+
+@keyframes logo {
+  0% {
+    -webkit-transform: rotate(0deg), scale(8);
+            transform: rotate(0deg), scale(8);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  5% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  6% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+}
+
+.play_button {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #d69b3a;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  border: none;
+  position: absolute;
+  top: 80vh;
+  left: 42%;
+  z-index: 51;
+}
+
+#horse1 {
+  opacity: 0;
+  -webkit-animation: horse1 5s forwards;
+          animation: horse1 5s forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+@-webkit-keyframes horse1 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes horse1 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#person1 {
+  opacity: 0;
+  -webkit-animation: person1 5s forwards;
+          animation: person1 5s forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+@-webkit-keyframes person1 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes person1 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#horse2 {
+  opacity: 0;
+  -webkit-animation: horse2 5s forwards;
+          animation: horse2 5s forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+@-webkit-keyframes horse2 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes horse2 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#person2 {
+  opacity: 0;
+  -webkit-animation: person2 5s forwards;
+          animation: person2 5s forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+@-webkit-keyframes person2 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes person2 {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#horseline path {
+  opacity: 0;
+  fill: none;
+  stroke: white;
+  -webkit-animation: horseline 5s alternate forwards ease-in-out;
+          animation: horseline 5s alternate forwards ease-in-out;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  stroke-miterlimit: 5;
+  stroke-dasharray: 300;
+  stroke: white;
+}
+
+#horseline polygon {
+  opacity: 0;
+  -webkit-animation: horseline 5s alternate forwards ease-in-out;
+          animation: horseline 5s alternate forwards ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  stroke-miterlimit: 5;
+  stroke-dasharray: 300;
+  stroke: white;
+}
+
+@-webkit-keyframes horseline {
+  0% {
+    stroke-dashoffset: 300;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes horseline {
+  0% {
+    stroke-dashoffset: 300;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.hideIntro {
+  -webkit-animation: hide 2s forwards ease-in-out;
+          animation: hide 2s forwards ease-in-out;
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.layer--instructions {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: width 0.8s 0.2s;
+  transition: width 0.8s 0.2s;
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+  z-index: 45;
+}
+
+.layer--instructions h2 {
+  padding-bottom: 1em;
+}
+
+.div--grey {
+  background-color: #f1f1f1;
+  height: 6em;
+  width: 100vw;
+  border-top: 4px solid #d69b3a;
+  margin-top: 1.5em;
 }
 
 .layer--locations {
@@ -270,8 +610,8 @@ body {
   max-height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
   overflow: hidden;
   z-index: 20;
 }

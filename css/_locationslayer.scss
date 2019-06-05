@@ -7,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   transition: width 0.8s 0.2s;
-  background-color: #121f29;
+  background-color: $navy;
   text-align: center;
   z-index: 40;
   overflow: hidden;
@@ -49,11 +49,11 @@
 
   &:hover,
   &:focus {
-    border: 3px solid $ochre;
+    border: 3px solid $gold;
   }
 
   h4 {
-    color: $navybg;
+    color: $navy;
     margin: 0;
     background-color: white;
     width: 100%;

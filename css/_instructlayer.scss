@@ -1,0 +1,86 @@
+.layer--instructions {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  transition: width 0.8s 0.2s;
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+  z-index: 45;
+
+  h2 {
+    padding-bottom: 1em;
+  }
+}
+
+.div--grey {
+  background-color: #f1f1f1;
+  height: 6em;
+  width: 100vw;
+  border-top: 4px solid $gold;
+  margin-top: 1.5em;
+}
+
+// #clickHorse {
+//   left: 50%;
+// }
+// #circle1 {
+//   animation: click 3s infinite ease-in-out;
+// }
+
+// @keyframes click {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+// @mixin title {
+//   opacity: 0;
+//   font-size: 2em;
+//   color: white;
+//   position: absolute;
+//   z-index: 51;
+//   font-family: $headerfont;
+//   font-weight: 100;
+//   // animation: title 5s alternate forwards ease-in-out;
+//   // animation-delay: 2s;
+// }
+
+// .title {
+//   @include title;
+// }
+
+// #arrows {
+//   animation: arrows 3s infinite;
+// }
+
+// @keyframes arrows {
+//   0% {
+//     transform: rotate(0deg), scale(8);
+//     transform-origin: center;
+//     transform-box: fill-box;
+//   }
+
+//   5% {
+//     transform: rotate(360deg);
+//     transform-origin: center;
+//     transform-box: fill-box;
+//   }
+
+//   6% {
+//     transform: rotate(0deg);
+//     transform-origin: center;
+//     transform-box: fill-box;
+//   }
+
+//   100% {
+//     transform: rotate(360deg) scale(1);
+//     transform-origin: center;
+//     transform-box: fill-box;
+//   }
+// }
