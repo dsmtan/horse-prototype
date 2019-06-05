@@ -23,8 +23,12 @@
         <img class="img--horsehead" src="images/horseheader.svg" />
         <h2>INSTRUCTIONS</h2>
       </section>
-      <div class="div--grey"></div>
-      <div id="pointer"></div>
+      <div class="div--grey">
+        <p><span class="stepNo">1</span> Pick the location of your race.</p>
+        <p><span class="stepNo">2</span> Pick your winning horse.</p>
+        <p><span class="stepNo">3</span> Click on your horse to help it win!</p>
+      </div>
+      <div id="pointerSVG"></div>
       <button id="playBtn2" class="play_button">Continue</button>
     </div>
 
@@ -36,16 +40,16 @@
       </section>
       <div class="div--locationgrid">
         <article class="article--location" id="location--1">
-          <h4 class="locationname">Location 1</h4>
+          <h4 class="locationname">Hamilton Park (UK)</h4>
         </article>
         <article class="article--location" id="location--2">
-          <h4 class="locationname">Location 2</h4>
+          <h4 class="locationname">Aalborg (DK)</h4>
         </article>
         <article class="article--location" id="location--3">
-          <h4 class="locationname">Location 3</h4>
+          <h4 class="locationname">Meydan (UAE)</h4>
         </article>
         <article class="article--location" id="location--4">
-          <h4 class="locationname">Location 4</h4>
+          <h4 class="locationname">Freehold Raceway (USA)</h4>
         </article>
       </div>
     </div>
@@ -58,16 +62,16 @@
       </section>
       <div class="div--horsegrid">
         <article class="article--horse" id="horse--green">
-          <h4 class="horsename">Horse Green</h4>
+          <h4 class="horsename">Jolly</h4>
         </article>
         <article class="article--horse" id="horse--orange">
-          <h4 class="horsename">Horse Orange</h4>
+          <h4 class="horsename">Skippy</h4>
         </article>
         <article class="article--horse" id="horse--red">
-          <h4 class="horsename">Horse Red</h4>
+          <h4 class="horsename">Goldy</h4>
         </article>
         <article class="article--horse" id="horse--black">
-          <h4 class="horsename">Horse Black</h4>
+          <h4 class="horsename">Speedy</h4>
         </article>
       </div>
     </div>
@@ -75,7 +79,6 @@
     <!-- GAME LAYER -->
 
     <div class="layer--game">
-      <!-- button is only a placeholder til previous layer is done -->
       <button class="button--start">START</button>
 
       <div class="div--track track--1">
@@ -98,20 +101,28 @@
     <div class="layer--ranking">
       <section class="section--header">
         <img class="img--horsehead" src="images/horseheader.svg" />
-        <h2>CONGRATULATIONS - make dynamic</h2>
+        <h2 id="resultheader">Nice try...</h2>
       </section>
-      <div class="div--trophee"></div>
+      <div class="div--trophy"></div>
 
       <div class="div--rankinggrid">
         <p class="rankno">1</p>
         <p class="rankno">2</p>
         <p class="rankno">3</p>
         <p class="rankno">4</p>
-        <p class="result">hi</p>
-        <p class="result">hi2</p>
-        <p class="result">hi3</p>
-        <p class="result">hi4</p>
+        <p class="result" id="result1"></p>
+        <p class="result" id="result2"></p>
+        <p class="result" id="result3"></p>
+        <p class="result" id="result4"></p>
       </div>
+
+      <p class="p--invite">
+        Maybe you'll do better when there's real money involved.
+      </p>
+
+      <button id="tryBtn" class="play_button">Try in real life</button>
+
+      <a class="a--practice" href=".">Practice more</a>
     </div>
 
     <script src="js/intro.js"></script>

@@ -31,7 +31,6 @@
 
 window.addEventListener("DOMContentLoaded", loadIntroSVG);
 
-const introLayer = document.querySelector(".layer--intro");
 const firstPage = document.querySelector("#svg_firstpage");
 
 //load introsvg for animations
@@ -48,11 +47,20 @@ function loadIntroSVG() {
 
 //when play button in intro is clicked layer disappears
 const playBtn = document.querySelector("#playBtn");
+const playBtn2 = document.querySelector("#playBtn2");
+const introLayer = document.querySelector(".layer--intro");
+const instructLayer = document.querySelector(".layer--instructions");
+
 playBtn.addEventListener("click", nextPage);
+playBtn2.addEventListener("click", nextPage);
 
 function nextPage() {
-  introLayer.classList.add("disappear");
-  secondSVG();
+  if (event.target.id === "playBtn") {
+    introLayer.classList.add("disappear");
+    secondSVG();
+  } else if (event.target.id === "playBtn2") {
+    instructLayer.classList.add("disappear");
+  }
 }
 
 //load point finger svg
@@ -61,7 +69,7 @@ function secondSVG() {
     .then(response => response.text())
     .then(svgdata => {
       document
-        .querySelector("#pointer")
+        .querySelector("#pointerSVG")
         .insertAdjacentHTML("afterbegin", svgdata);
     });
 }

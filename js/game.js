@@ -50,10 +50,10 @@ let XvalueFinish;
 //get all horses in an array
 let horseList = document.querySelectorAll(".div--horse");
 let horseNames = [
-  "horse--green",
+  "horse--red",
   "horse--orange",
   "horse--black",
-  "horse--red"
+  "horse--green"
 ];
 let rankingList = [];
 
@@ -97,6 +97,8 @@ function placeHorses() {
   thirdHorse.id = "run" + horseNames[2];
 }
 
+let passFunction;
+
 function startRace() {
   startBtn.classList.add("hide");
 
@@ -105,9 +107,11 @@ function startRace() {
     singleHorse.classList.add("galloping");
 
     if (singleHorse.id == "horse--user") {
-      singleHorse.addEventListener("click", function() {
+      passFunction = function() {
         moveUserHorse(singleHorse);
-      });
+      };
+
+      userHorse.addEventListener("click", passFunction, true);
     } else {
       horseMoveRandom(singleHorse);
     }
@@ -130,9 +134,11 @@ function registerFinish(singleHorse) {
   let horseNose = singleHorse.getBoundingClientRect().right - 15;
 
   if (horseNose > XvalueFinish) {
+    if (singleHorse == userHorse) {
+      userHorse.removeEventListener("click", passFunction, true);
+    }
     // finished horse pushed to array
     rankingList.push(singleHorse.id);
-
     //remove galloping animation
     singleHorse.classList.remove("galloping");
     gameFinished();
@@ -156,7 +162,7 @@ function gameFinished() {
   //show who won
   let winner = rankingList[0];
   let winnerElement = document.querySelector(`#${winner}`);
-  winnerElement.parentNode.style.backgroundColor = "#d69b3a";
+  winnerElement.parentNode.style.backgroundColor = "#d69a3ad7";
 
   if (rankingList.length === 4) {
     //show results when all horses finish
@@ -165,20 +171,32 @@ function gameFinished() {
 }
 
 const rankingDiv = document.querySelector(".layer--ranking");
+const resultHeader = document.querySelector("#resultheader");
+const inviteText = document.querySelector(".p--invite");
 
 function showResults() {
   rankingDiv.classList.add("shown");
 
   rankingList.forEach(rankedHorse => {
     let place = rankingList.indexOf(rankedHorse) + 1;
-    let rank = document.createElement("p");
+    let resultText = document.querySelector(`#result${place}`);
 
     if (rankedHorse === "horse--user") {
-      rank.textContent = `# ${place} : YOU!!!`;
-    } else {
-      rank.textContent = `# ${place} : ${rankedHorse}`;
-    }
+      resultText.textContent = "YOU";
 
-    rankingDiv.appendChild(rank);
+      if (place === 1) {
+        resultHeader.textContent = "CONGRATULATIONS!";
+        inviteText.textContent =
+          "Wow, you have a special talent! Time to make some real money.";
+      }
+    } else if (rankedHorse === "runhorse--green") {
+      resultText.textContent = "Jolly";
+    } else if (rankedHorse === "runhorse--orange") {
+      resultText.textContent = "Skippy";
+    } else if (rankedHorse === "runhorse--red") {
+      resultText.textContent = "Goldy";
+    } else if (rankedHorse === "runhorse--black") {
+      resultText.textContent = "Speedy";
+    }
   });
 }

@@ -72,8 +72,8 @@ body {
   color: white;
   -webkit-animation: headline 2.8s alternate forwards ease-in-out;
           animation: headline 2.8s alternate forwards ease-in-out;
-  -webkit-animation-delay: 2.4s;
-          animation-delay: 2.4s;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
   z-index: 51;
 }
 
@@ -176,38 +176,41 @@ body {
   bottom: 15vh;
   left: 43%;
   z-index: 51;
+  opacity: 0;
+  -webkit-animation: appearSVG 2.1s forwards 2.2s;
+          animation: appearSVG 2.1s forwards 2.2s;
 }
 
 #horse1 {
   opacity: 0;
   -webkit-animation: appearSVG 5s forwards;
           animation: appearSVG 5s forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 #person1 {
   opacity: 0;
   -webkit-animation: appearSVG 5s forwards;
           animation: appearSVG 5s forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 #horse2 {
   opacity: 0;
   -webkit-animation: appearSVG 5s forwards;
           animation: appearSVG 5s forwards;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 #person2 {
   opacity: 0;
   -webkit-animation: appearSVG 5s forwards;
           animation: appearSVG 5s forwards;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
 }
 
 @-webkit-keyframes appearSVG {
@@ -228,8 +231,8 @@ body {
   stroke: white;
   -webkit-animation: horseDraw 3.5s alternate forwards ease-in-out;
           animation: horseDraw 3.5s alternate forwards ease-in-out;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
   stroke-miterlimit: 5;
   stroke-dasharray: 300;
   stroke: white;
@@ -239,8 +242,8 @@ body {
   opacity: 0;
   -webkit-animation: horseDraw 3.5s alternate forwards ease-in-out;
           animation: horseDraw 3.5s alternate forwards ease-in-out;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
   stroke-miterlimit: 5;
   stroke-dasharray: 300;
   stroke: white;
@@ -283,7 +286,7 @@ body {
 }
 
 .layer--instructions h2 {
-  padding-bottom: 1em;
+  padding-bottom: 0.5em;
 }
 
 .div--grey {
@@ -291,31 +294,48 @@ body {
   height: 6em;
   width: 100vw;
   border-top: 4px solid #d69b3a;
-  margin-top: 1.5em;
+  margin-top: 1.2em;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.div--grey p {
+  margin: 1em 1.4em;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.div--grey .stepNo {
+  float: left;
+  font-size: 3.3em;
+  font-weight: 600;
+  padding-right: 12px;
+  margin-top: -18px;
 }
 
 svg#clickHorse {
-  height: 75px;
-  margin: 1em;
+  max-height: 22vh;
+  margin-top: 4vh;
 }
 
 #playBtn2 {
-  bottom: 8vh;
-  left: 39%;
+  bottom: 12px;
+  left: 40%;
+  font-size: 1.3em;
 }
 
 #circle-in {
-  -webkit-animation: pulse 1s infinite;
-          animation: pulse 1s infinite;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
   -webkit-transform-origin: 70% 55%;
           transform-origin: 70% 55%;
 }
 
 #circle-out {
-  -webkit-animation: pulse 1s infinite;
-          animation: pulse 1s infinite;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
   -webkit-transform-origin: 70% 55%;
           transform-origin: 70% 55%;
 }
@@ -411,6 +431,7 @@ svg#clickHorse {
   width: 100%;
   padding: 3px;
   font-size: 1em;
+  font-weight: 500;
 }
 
 #location--1 {
@@ -494,6 +515,7 @@ svg#clickHorse {
   font-size: 1em;
   width: 100%;
   padding: 3px;
+  font-weight: 500;
 }
 
 #horse--green {
@@ -632,13 +654,17 @@ svg#clickHorse {
   height: 0;
   max-height: 100vh;
   margin: 0;
-  background-color: #121f29f1;
-  color: white;
+  background-color: white;
+  color: #121f29;
   text-align: center;
   -webkit-transition: height 1s;
   transition: height 1s;
   overflow: hidden;
   z-index: 25;
+}
+
+.layer--ranking .section--header {
+  padding-bottom: 0.5em;
 }
 
 .layer--ranking h2 {
@@ -662,24 +688,79 @@ svg#clickHorse {
   opacity: 1;
 }
 
+.div--trophy {
+  height: 3em;
+  background-image: url("../images/trophy_line.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .div--rankinggrid {
-  width: 50%;
-  margin: 0 auto;
+  width: 9em;
+  margin: 0 auto 1em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
-  -ms-grid-rows: 3em 3em 3em 3em;
-      grid-template-rows: 3em 3em 3em 3em;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: 1.5em 1.5em 1.5em 1.5em;
+      grid-template-rows: 1.5em 1.5em 1.5em 1.5em;
 }
 
 .rankno {
   -ms-grid-column: 1;
   grid-column: 1;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 0.5em;
 }
 
 .result {
+  text-align: left;
   -ms-grid-column: 2;
   grid-column: 2;
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+#result1 {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  font-weight: 600;
+}
+
+#result2 {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#result3 {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+#result4 {
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.p--invite {
+  margin-top: 2.5em;
+  position: relative;
+  font-weight: 600;
+}
+
+#tryBtn {
+  bottom: 15px;
+  font-size: 1.2em;
+  left: 38%;
+}
+
+.a--practice {
+  text-decoration: none;
+  color: #d69b3a;
+  position: absolute;
+  bottom: 18px;
+  right: 1.2em;
 }
 /*# sourceMappingURL=style.css.map */
