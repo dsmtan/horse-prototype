@@ -183,6 +183,7 @@ function showResults() {
 
     if (rankedHorse === "horse--user") {
       resultText.textContent = "YOU";
+      resultText.style.fontWeight = "700";
 
       if (place === 1) {
         resultHeader.textContent = "CONGRATULATIONS!";

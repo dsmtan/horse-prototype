@@ -174,7 +174,9 @@ body {
   border: none;
   position: absolute;
   bottom: 15vh;
-  left: 43%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 51;
   opacity: 0;
   -webkit-animation: appearSVG 2.1s forwards 2.2s;
@@ -322,7 +324,6 @@ svg#clickHorse {
 
 #playBtn2 {
   bottom: 12px;
-  left: 40%;
   font-size: 1.3em;
 }
 
@@ -726,7 +727,6 @@ svg#clickHorse {
 #result1 {
   -ms-grid-row: 1;
   grid-row: 1;
-  font-weight: 600;
 }
 
 #result2 {
@@ -745,7 +745,7 @@ svg#clickHorse {
 }
 
 .p--invite {
-  margin-top: 2.5em;
+  margin-top: 2.2em;
   position: relative;
   font-weight: 600;
 }
@@ -753,7 +753,6 @@ svg#clickHorse {
 #tryBtn {
   bottom: 15px;
   font-size: 1.2em;
-  left: 38%;
 }
 
 .a--practice {
