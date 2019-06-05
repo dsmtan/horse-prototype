@@ -41,7 +41,6 @@ function loadIntroSVG() {
       document
         .querySelector("#svg_firstpage")
         .insertAdjacentHTML("afterbegin", svgdata);
-      console.log("I should work");
     });
 }
 

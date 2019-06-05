@@ -1,6 +1,6 @@
 "use strict";
 
-//testing user selection of background and horse
+//default user selection of background and horse
 let userChoices = {
   location: "location--4",
   horse: "green"
@@ -198,5 +198,9 @@ function showResults() {
     } else if (rankedHorse === "runhorse--black") {
       resultText.textContent = "Speedy";
     }
+  });
+
+  document.querySelector("#tryBtn").addEventListener("click", function() {
+    window.location.href = "/sign-up/signup.html";
   });
 }
