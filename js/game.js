@@ -43,7 +43,7 @@ function registerChoice() {
 
 //GAME LAYER
 const gameLayer = document.querySelector(".layer--game");
-const startBtn = document.querySelector(".button--start");
+
 const finish = document.querySelector(".div--finish");
 
 let XvalueFinish;
@@ -71,7 +71,7 @@ function prepareGame() {
   //place all horses in tracks with user's horse at bottom
   placeHorses();
 
-  startBtn.addEventListener("click", startRace);
+  setTimeout(countDown, 1000);
 }
 
 function setLocationBg() {
@@ -97,11 +97,33 @@ function placeHorses() {
   thirdHorse.id = "run" + horseNames[2];
 }
 
+//COUNTDOWN
+const countDiv = document.querySelector(".div--countdown");
+const countText = document.querySelector(".p--countdown");
+
+function countDown() {
+  let counter = 3;
+
+  function countLoop() {
+    setTimeout(() => {
+      if (counter > 0) {
+        countText.textContent = counter;
+        countText.style.fontSize = "3.5em";
+        counter--;
+        countLoop();
+      } else if (counter == 0) {
+        countDiv.classList.add("hide");
+        startRace();
+      }
+    }, 1200);
+  }
+
+  countLoop();
+}
+
 let passFunction;
 
 function startRace() {
-  startBtn.classList.add("hide");
-
   horseList.forEach(singleHorse => {
     //add galloping animation
     singleHorse.classList.add("galloping");

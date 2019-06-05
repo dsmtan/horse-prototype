@@ -29,10 +29,6 @@ body {
   font-family: $bodyfont;
 }
 
-.hide {
-  display: none;
-}
-
 .section--header {
   margin: 0 auto;
   background-color: $navy;
@@ -57,4 +53,8 @@ body {
     transition: 0.8s 0.2s;
     opacity: 0;
   }
+}
+
+.hide {
+  display: none;
 }
