@@ -32,10 +32,9 @@
 window.addEventListener("DOMContentLoaded", loadIntroSVG);
 
 const introLayer = document.querySelector(".layer--intro");
-let playBtn = document.querySelector("#playBtn");
-let firstPage = document.querySelector("#svg_firstpage");
-let gameName = document.querySelector(".h1--gamename");
+const firstPage = document.querySelector("#svg_firstpage");
 
+//load introsvg for animations
 function loadIntroSVG() {
   fetch("/images/firstpage.svg")
     .then(response => response.text())
@@ -47,7 +46,8 @@ function loadIntroSVG() {
     });
 }
 
-let instructions = document.querySelector("#instructions");
+//when play button in intro is clicked layer disappears
+const playBtn = document.querySelector("#playBtn");
 playBtn.addEventListener("click", nextPage);
 
 function nextPage() {
@@ -55,6 +55,7 @@ function nextPage() {
   secondSVG();
 }
 
+//load point finger svg
 function secondSVG() {
   fetch("/images/pointer.svg")
     .then(response => response.text())
