@@ -35,7 +35,6 @@ function registerChoice() {
         prepareGame();
         console.log(userChoices);
       }
-      //add else if for horse choice later
     },
     false
   );
@@ -152,6 +151,16 @@ function horseMoveRandom(singleHorse) {
   registerFinish(singleHorse);
 }
 
+// make user horse move on click
+function moveUserHorse(userHorse) {
+  let userX = userHorse.getBoundingClientRect().left;
+  let userSpeed = Math.random() * (90 - 50) + 50;
+
+  userHorse.style.transform = `translateX(${userX + userSpeed}px)`;
+
+  registerFinish(userHorse);
+}
+
 function registerFinish(singleHorse) {
   let horseNose = singleHorse.getBoundingClientRect().right - 15;
 
@@ -168,16 +177,6 @@ function registerFinish(singleHorse) {
     // each horse loops until finish is reached
     setTimeout(horseMoveRandom, Math.random() * 900, singleHorse);
   }
-}
-
-// make user horse move on click
-function moveUserHorse(userHorse) {
-  let userX = userHorse.getBoundingClientRect().left;
-  let userSpeed = Math.random() * (90 - 50) + 50;
-
-  userHorse.style.transform = `translateX(${userX + userSpeed}px)`;
-
-  registerFinish(userHorse);
 }
 
 function gameFinished() {

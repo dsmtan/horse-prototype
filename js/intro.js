@@ -75,7 +75,6 @@ function loadIntroSVG() {
 }
 
 //when play button in intro is clicked layer disappears
-
 playBtn.addEventListener("click", nextPage);
 playBtn2.addEventListener("click", nextPage);
 

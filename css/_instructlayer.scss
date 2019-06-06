@@ -68,34 +68,3 @@ svg#clickHorse {
     transform: scale(1);
   }
 }
-
-//for turning screen to landscape
-// #arrows {
-//   animation: arrows 3s infinite;
-// }
-
-// @keyframes arrows {
-//   0% {
-//     transform: rotate(0deg), scale(8);
-//     transform-origin: center;
-//     transform-box: fill-box;
-//   }
-
-//   5% {
-//     transform: rotate(360deg);
-//     transform-origin: center;
-//     transform-box: fill-box;
-//   }
-
-//   6% {
-//     transform: rotate(0deg);
-//     transform-origin: center;
-//     transform-box: fill-box;
-//   }
-
-//   100% {
-//     transform: rotate(360deg) scale(1);
-//     transform-origin: center;
-//     transform-box: fill-box;
-//   }
-// }
