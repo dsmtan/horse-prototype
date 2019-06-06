@@ -13,6 +13,7 @@
   text-align: center;
   transition: height 1s;
   overflow: hidden;
+  transform-origin: right;
   z-index: 25;
 
   .section--header {
@@ -28,6 +29,10 @@
     opacity: 0;
   }
 
+  #tryBtn {
+    opacity: 0;
+  }
+
   &.shown {
     height: 100vh;
 
@@ -36,6 +41,10 @@
     }
 
     p {
+      opacity: 1;
+    }
+
+    #tryBtn {
       opacity: 1;
     }
   }

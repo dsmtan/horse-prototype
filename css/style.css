@@ -772,6 +772,8 @@ svg#clickHorse {
   -webkit-transition: height 1s;
   transition: height 1s;
   overflow: hidden;
+  -webkit-transform-origin: right;
+          transform-origin: right;
   z-index: 25;
 }
 
@@ -788,6 +790,10 @@ svg#clickHorse {
   opacity: 0;
 }
 
+.layer--ranking #tryBtn {
+  opacity: 0;
+}
+
 .layer--ranking.shown {
   height: 100vh;
 }
@@ -797,6 +803,10 @@ svg#clickHorse {
 }
 
 .layer--ranking.shown p {
+  opacity: 1;
+}
+
+.layer--ranking.shown #tryBtn {
   opacity: 1;
 }
 
