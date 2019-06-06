@@ -63,13 +63,3 @@
     }
   }
 }
-
-.turned {
-  animation: portraitDisappear 5s forwards;
-}
-
-@keyframes portraitDisappear {
-  100% {
-    opacity: 0;
-  }
-}

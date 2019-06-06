@@ -10,13 +10,13 @@ const playBtn = document.querySelector("#playBtn");
 const playBtn2 = document.querySelector("#playBtn2");
 
 // Find out if screen is in landscape mode
-let mql = window.matchMedia("(orientation: landscape)");
+let userScreenMode = window.matchMedia("(orientation: landscape)");
 const portraitLayer = document.querySelector(".layer--portrait");
 
 window.addEventListener("DOMContentLoaded", watchScreen);
 
 function watchScreen() {
-  if (mql.matches) {
+  if (userScreenMode.matches) {
     // landscape orientation
     portraitLayer.style.display = "none";
     gameName.classList.add("animateName");
@@ -31,7 +31,7 @@ function watchScreen() {
   }
 }
 
-mql.addListener(watchScreen);
+userScreenMode.addListener(watchScreen);
 
 //call openFullscreen after user has turned to landscape mode
 //this works but is super annoying while coding

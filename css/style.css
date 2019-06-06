@@ -123,23 +123,6 @@ body {
   }
 }
 
-.turned {
-  -webkit-animation: portraitDisappear 5s forwards;
-          animation: portraitDisappear 5s forwards;
-}
-
-@-webkit-keyframes portraitDisappear {
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes portraitDisappear {
-  100% {
-    opacity: 0;
-  }
-}
-
 .layer--intro {
   position: absolute;
   top: 0%;
