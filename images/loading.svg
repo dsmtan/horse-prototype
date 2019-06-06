@@ -16,8 +16,8 @@
 	<rect x="1.2" y="0" class="st0" width="360" height="640"/>
 </g>
 <g id="portraittext">
-	<text transform="matrix(1 0 0 1 124.5747 412.8398)" class="stwhite st2 st3">Change your phone</text>
-	<text transform="matrix(1 0 0 1 125.8747 427.2398)" class="stwhite st2 st3">to landscape mode</text>
+	<text transform="matrix(1 0 0 1 124.5747 412.8398)" >Change your phone</text>
+	<text transform="matrix(1 0 0 1 125.8747 427.2398)" >to landscape mode</text>
 </g>
 <g id="logo">
 	<g>
