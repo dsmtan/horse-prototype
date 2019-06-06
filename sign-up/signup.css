@@ -51,7 +51,7 @@ input:focus {
 }
 
 form {
-  margin-top: 3em;
+  margin-top: 2.5em;
   font-size: 20px;
 }
 
@@ -173,4 +173,22 @@ input[type="radio"]:checked + .box {
   position: relative;
   left: -35px;
   content: "✖️";
+}
+
+@media all and (max-width: 375px) {
+  .grid1 {
+    grid-gap: 1em;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .box {
+    width: 5.5em;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .box {
+    width: 4.5em;
+  }
 }
