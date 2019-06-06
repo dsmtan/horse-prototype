@@ -16,14 +16,12 @@ const portraitLayer = document.querySelector(".layer--portrait");
 window.addEventListener("DOMContentLoaded", watchScreen);
 
 function watchScreen() {
-  // If it matches = landscape
   if (mql.matches) {
     // landscape orientation
     portraitLayer.style.display = "none";
     gameName.classList.add("animateName");
     playBtn.classList.add("animateBtn");
     loadIntroSVG();
-
     openFullscreen();
   } else {
     // portrait orientation
@@ -36,6 +34,7 @@ function watchScreen() {
 mql.addListener(watchScreen);
 
 //call openFullscreen after user has turned to landscape mode
+//this works but is super annoying while coding
 
 function openFullscreen() {
   // if (document.body.requestFullscreen) {
@@ -52,10 +51,6 @@ function openFullscreen() {
   // }
 }
 
-// window.onload = function() {
-//   portraitSVG();
-// };
-
 //svg for portrait to landscape animation
 window.addEventListener("DOMContentLoaded", portraitSVG);
 function portraitSVG() {
@@ -68,9 +63,7 @@ function portraitSVG() {
     });
 }
 
-// window.addEventListener("DOMContentLoaded", loadIntroSVG);
-
-//load introsvg for animations
+//load introsvg for game start animations
 function loadIntroSVG() {
   fetch("images/firstpage.svg")
     .then(response => response.text())

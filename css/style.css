@@ -60,6 +60,41 @@ body {
     overflow: hidden;
     z-index: 60;
   }
+  #phone {
+    -webkit-animation: rotatePhone 2s ease-out infinite;
+            animation: rotatePhone 2s ease-out infinite;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  @-webkit-keyframes rotatePhone {
+    40% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    70% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+  @keyframes rotatePhone {
+    40% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    70% {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
   #portraittext text {
     font-family: "Raleway", sans-serif;
     color: white;

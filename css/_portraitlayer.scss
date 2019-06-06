@@ -12,6 +12,26 @@
     z-index: 60;
   }
 
+  #phone {
+    animation: rotatePhone 2s ease-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  @keyframes rotatePhone {
+    40% {
+      transform: rotate(90deg);
+    }
+
+    70% {
+      transform: rotate(90deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
   #portraittext {
     text {
       font-family: $bodyfont;
