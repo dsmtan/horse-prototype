@@ -54,7 +54,6 @@ function showUsers(singleUser) {
 const form = document.querySelector("form");
 form.addEventListener("submit", e => {
   e.preventDefault();
-  console.log("submited");
 
   const user = {
     name: form.elements.name.value,
@@ -67,18 +66,18 @@ form.addEventListener("submit", e => {
     city: form.elements.city.value,
     birth: form.elements.birth.value
   };
-  console.log(user);
+
   checkemail();
   post(user);
 });
 
-function checkemail() {
+/* function checkemail() {
   if (emails.includes(form.elements.email.value)) {
     window.alert("user already");
   } else {
     post();
   }
-}
+} */
 
 document.querySelector(".next").addEventListener("click", nextform);
 
@@ -112,7 +111,7 @@ myInput.onblur = function() {
 // When the user starts to type something inside the password field
 myInput.onkeyup = function() {
   // Validate numbers
-  var numbers = /[0-9]/g;
+  let numbers = /[0-9]/g;
   if (myInput.value.match(numbers)) {
     number.classList.remove("invalid");
     number.classList.add("valid");
