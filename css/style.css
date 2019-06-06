@@ -47,14 +47,70 @@ body {
   display: none;
 }
 
+@media screen and (orientation: portrait) {
+  .layer--portrait {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #121f29;
+    text-align: center;
+    overflow: hidden;
+    z-index: 60;
+  }
+  #portraittext text {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 100;
+  }
+  #horseportrait {
+    opacity: 1;
+  }
+  #horseportrait path {
+    opacity: 1;
+    fill: none;
+    stroke: white;
+    stroke-miterlimit: 5;
+    stroke-dasharray: 300;
+    stroke: white;
+    stroke-dashoffset: 0;
+  }
+  #horseportrait polygon {
+    opacity: 1;
+    stroke-miterlimit: 5;
+    stroke-dasharray: 300;
+    stroke: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+.turned {
+  -webkit-animation: portraitDisappear 5s forwards;
+          animation: portraitDisappear 5s forwards;
+}
+
+@-webkit-keyframes portraitDisappear {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes portraitDisappear {
+  100% {
+    opacity: 0;
+  }
+}
+
 .layer--intro {
   position: absolute;
   top: 0%;
   left: 0%;
   width: 100vw;
   height: 100vh;
-  -webkit-transition: width 0.8s 0.2s;
-  transition: width 0.8s 0.2s;
   background-color: #121f29;
   text-align: center;
   overflow: hidden;
@@ -70,26 +126,23 @@ body {
   font-family: "Slabo 27px", serif;
   font-weight: 100;
   color: white;
-  -webkit-animation: headline 2.8s alternate forwards ease-in-out;
-          animation: headline 2.8s alternate forwards ease-in-out;
-  -webkit-animation-delay: 2.1s;
-          animation-delay: 2.1s;
   z-index: 51;
 }
 
-@-webkit-keyframes headline {
-  0% {
-    opacity: 0;
-  }
+.animateName {
+  -webkit-animation: headlineAppear 2.8s ease-in-out forwards;
+          animation: headlineAppear 2.8s ease-in-out forwards;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+@-webkit-keyframes headlineAppear {
   100% {
     opacity: 1;
   }
 }
 
-@keyframes headline {
-  0% {
-    opacity: 0;
-  }
+@keyframes headlineAppear {
   100% {
     opacity: 1;
   }
@@ -178,7 +231,13 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 51;
+}
+
+#playBtn {
   opacity: 0;
+}
+
+.animateBtn {
   -webkit-animation: appearSVG 2.1s forwards 2.2s;
           animation: appearSVG 2.1s forwards 2.2s;
 }
@@ -549,6 +608,8 @@ svg#clickHorse {
 
 .disappear {
   width: 0;
+  -webkit-transition: width 0.8s 0.2s;
+  transition: width 0.8s 0.2s;
 }
 
 .disappear * {

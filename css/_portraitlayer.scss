@@ -1,0 +1,55 @@
+@media screen and (orientation: portrait) {
+  .layer--portrait {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: $navy;
+    text-align: center;
+    overflow: hidden;
+    z-index: 60;
+  }
+
+  #portraittext {
+    text {
+      font-family: $bodyfont;
+      color: white;
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: 100;
+    }
+  }
+
+  #horseportrait {
+    opacity: 1;
+
+    path {
+      opacity: 1;
+      fill: none;
+      stroke: $white;
+      stroke-miterlimit: 5;
+      stroke-dasharray: 300;
+      stroke: $white;
+      stroke-dashoffset: 0;
+    }
+    polygon {
+      opacity: 1;
+      stroke-miterlimit: 5;
+      stroke-dasharray: 300;
+      stroke: $white;
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.turned {
+  animation: portraitDisappear 5s forwards;
+}
+
+@keyframes portraitDisappear {
+  100% {
+    opacity: 0;
+  }
+}

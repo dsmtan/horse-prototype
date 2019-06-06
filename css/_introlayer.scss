@@ -4,7 +4,6 @@
   left: 0%;
   width: 100vw;
   height: 100vh;
-  transition: width 0.8s 0.2s;
   background-color: $navy;
   text-align: center;
   overflow: hidden;
@@ -20,16 +19,15 @@
   font-family: $headerfont;
   font-weight: 100;
   color: white;
-
-  animation: headline 2.8s alternate forwards ease-in-out;
-  animation-delay: 2.1s;
   z-index: 51;
 }
 
-@keyframes headline {
-  0% {
-    opacity: 0;
-  }
+.animateName {
+  animation: headlineAppear 2.8s ease-in-out forwards;
+  animation-delay: 2.1s;
+}
+
+@keyframes headlineAppear {
   100% {
     opacity: 1;
   }
@@ -84,7 +82,13 @@
 
 .play_button {
   @include play_button;
+}
+
+#playBtn {
   opacity: 0;
+}
+
+.animateBtn {
   animation: appearSVG 2.1s forwards 2.2s;
 }
 
