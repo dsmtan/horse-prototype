@@ -35,7 +35,7 @@ const firstPage = document.querySelector("#svg_firstpage");
 
 //load introsvg for animations
 function loadIntroSVG() {
-  fetch("/images/firstpage.svg")
+  fetch("images/firstpage.svg")
     .then(response => response.text())
     .then(svgdata => {
       document
@@ -64,7 +64,7 @@ function nextPage() {
 
 //load point finger svg
 function secondSVG() {
-  fetch("/images/pointer.svg")
+  fetch("images/pointer.svg")
     .then(response => response.text())
     .then(svgdata => {
       document

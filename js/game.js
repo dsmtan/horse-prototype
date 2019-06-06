@@ -224,6 +224,6 @@ function showResults() {
   });
 
   document.querySelector("#tryBtn").addEventListener("click", function() {
-    window.location.href = "/sign-up/signup.html";
+    window.location.href = "./sign-up/signup.html";
   });
 }
